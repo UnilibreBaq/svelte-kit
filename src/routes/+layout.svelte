@@ -1,57 +1,21 @@
 <script lang="ts">
-	import Header from './Header.svelte';
 	import '../app.css';
-
 	let { children } = $props();
 </script>
 
 <div class="app">
-	<Header />
-
-	<main>
-		{@render children()}
-	</main>
-
-	<footer class="text-yellow-500">
-		<p>
-			Pie de página
-		</p>
-	</footer>
+	 <!-- Encabezado -->
+	 <header class="bg-purple-700 text-white py-4">
+		<div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+		  <h1 class="text-3xl font-semibold">UPANA</h1>
+		  <nav>
+			<a href="login" class="text-lg hover:text-purple-300">Iniciar sesión</a>
+		  </nav>
+		</div>
+	  </header>
+	
+	 
+	{@render children()}
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
 
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
